@@ -1,6 +1,6 @@
 package behaviours;
 
-public interface ISpell {
+public abstract interface ISpell {
 
     void cast();
 
