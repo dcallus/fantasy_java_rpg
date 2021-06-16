@@ -2,5 +2,10 @@ package weapons;
 
 import behaviours.IWeapon;
 
-public abstract class Sword implements IWeapon {
+public class Sword implements IWeapon {
+    @Override
+    public void attack() {
+
+    }
+
 }

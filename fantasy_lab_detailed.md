@@ -21,21 +21,21 @@ The game will also have rooms to work through. Each room should either have some
 
 ## MVP
 1. Create an abstract class `player.Player`. Each player will have a name and a number of health points.
-2. Create an abstract class for `Enemy`. Each enemy will have a number of health points and a method to take damage.
+2. Create an abstract class for `Enemy`. Each player.enemy will have a number of health points and a method to take damage.
 3. Create some subclasses of `Enemy` (Troll, Orc).
 4. Create an interface `IWeapon` which has a method `attack`
 5. Create classes which implement the `IWeapon` interface, e.g. Sword, Club, Axe.
-	*	Each of these could have a different damage value, which affects the health of the enemy attacked.
+	*	Each of these could have a different damage value, which affects the health of the player.enemy attacked.
 6. Create an abstract subclass of `player.Player` called `Fighter`. This should have an `IWeapon` and an attack method.
 7. Create some subclasses of `Fighter` - `Barbarian`, `Dwarf`, `Knight`.
 	 * Each will have a weapon of type `IWeapon`, which they can change as the game goes on i.e. a Dwarf might swap an Axe for a Club.
 	 * Add methods, properties specific to each
 8. Create an interface `ISpell` which has a method `cast`
 9. Create classes which implement the `ISpell` interface
-	*	Each of these could have a different power value, which affects the health of the enemy they are cast upon.
+	*	Each of these could have a different power value, which affects the health of the player.enemy they are cast upon.
 10. Create an interface `IDefend` which has a method `defend`
 11. Create classes which implement the `IDefend` interface e.g. Ogre, Dragon
-  * Each should have a defend method which affects the health value of the enemy they attack.
+  * Each should have a defend method which affects the health value of the player.enemy they attack.
 12. Create an abstract subclass of `player.Player` called `Mage`. This should have an `IDefend` and a method called `defend`.
 13. Create subclasses of `Mage`, e.g. `Warlock` and `Wizard`
 	* Each will have a spell of type `ISpell` and a defender of type `IDefend`, which they can change as the game goes on.
@@ -63,4 +63,4 @@ The game will also have rooms to work through. Each room should either have some
 * Create method that takes in treasure and adds value to party treasure.
 * Create an attack method that allows every party member to attack or cast a spell.
 * Create a heal method that allows any medic to heal all members of the party.
-* Allow rooms to randomly assign an enemy to defeat or treasure to find once user enters the room.
+* Allow rooms to randomly assign an player.enemy to defeat or treasure to find once user enters the room.
