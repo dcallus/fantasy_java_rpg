@@ -1,6 +1,7 @@
 package player;
 
 import behaviours.IWeapon;
+import spells.Spell;
 import spells.SpellType;
 import weapons.Hands;
 
@@ -38,6 +39,10 @@ public abstract class Player {
 
     public void takeDamage(int damage){
         this.healthPoints -= damage;
+    }
+
+    public void takeSpellDamage(int damage, SpellType spellType){
+        this.healthPoints -= damage * damageModifier.get(spellType);
     }
 
     public IWeapon getWeapon() {

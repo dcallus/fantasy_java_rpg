@@ -1,6 +1,9 @@
 package spells;
 
-public class Spell {
+import behaviours.ISpell;
+import player.Player;
+
+public class Spell implements ISpell {
 
     private String name;
     private int attackPower;
@@ -35,4 +38,10 @@ public class Spell {
     public void setSpellType(SpellType spellType) {
         this.spellType = spellType;
     }
+
+    public void castSpell(Player player){
+        player.takeSpellDamage(this.attackPower, this.spellType);
+    }
+
+
 }

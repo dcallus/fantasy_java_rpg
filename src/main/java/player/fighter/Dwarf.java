@@ -8,6 +8,8 @@ public class Dwarf extends Fighter {
 
     public Dwarf(String name) {
         super(name);
+
+        //default values for character
         this.carryWeight = 3;
         setDamageModifier(1.8, 0.3, 1);
     }
