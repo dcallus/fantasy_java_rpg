@@ -3,7 +3,7 @@ package player;
 import behaviours.IWeapon;
 import weapons.Hands;
 
-public abstract class Player implements IWeapon {
+public abstract class Player {
 
     private String name;
     private int healthPoints;
@@ -34,4 +34,13 @@ public abstract class Player implements IWeapon {
     public void takeDamage(int damage){
         this.healthPoints -= damage;
     }
+
+    public IWeapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(IWeapon weapon){
+        this.weapon = weapon;
+    };
+
 }
