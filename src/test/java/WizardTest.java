@@ -37,13 +37,13 @@ public class WizardTest {
 
     @Test
     public void wizardAttacksDwarfWithElectricity(){
-        wizard.getSpell().castSpell(dwarf);
+        wizard.castSpell(dwarf);
         assertEquals(90, dwarf.getHealthPoints());
     }
 
     @Test
     public void warlockAttacksDwarfWithFire(){
-        warlock.getSpell().castSpell(dwarf);
+        warlock.castSpell(dwarf);
         assertEquals(82, dwarf.getHealthPoints());
     }
 
@@ -51,7 +51,7 @@ public class WizardTest {
     public void wizardIsImmuneToElectricity(){
         warlock.setSpell(electricSpell);
         assertEquals(electricSpell, warlock.getSpell());
-        warlock.getSpell().castSpell(wizard);
+        warlock.castSpell(wizard);
         assertEquals(100, wizard.getHealthPoints());
     }
 

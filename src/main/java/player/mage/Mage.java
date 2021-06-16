@@ -22,6 +22,10 @@ public abstract class Mage extends Player {
         this.spell = spell;
     }
 
+    public void castSpell(Player player){
+        this.spell.castSpell(player);
+    }
+
     public abstract Spell createDefaultSpell();
 
 }
