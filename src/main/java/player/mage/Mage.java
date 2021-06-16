@@ -28,4 +28,10 @@ public abstract class Mage extends Player {
 
     public abstract Spell createDefaultSpell();
 
+    @Override
+    public void takeDamage(int damage){
+        int health = getHealthPoints();
+        setHealthPoints(health -= damage * 1.5);
+    }
+
 }

@@ -5,6 +5,8 @@ import player.mage.Warlock;
 import player.mage.Wizard;
 import spells.Spell;
 import spells.SpellType;
+import weapons.Sword;
+import weapons.WeaponSize;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,9 +17,11 @@ public class WizardTest {
     private Dwarf dwarf;
     private Warlock warlock;
     private Spell electricSpell;
+    private Sword dagger;
 
     @Before
     public void before() {
+        dagger = new Sword("Dagger", WeaponSize.SIDEARM, 10, 20);
         dwarf = new Dwarf("James");
         wizard = new Wizard("Gandalf");
         warlock = new Warlock("Jim");
@@ -55,4 +59,10 @@ public class WizardTest {
         assertEquals(100, wizard.getHealthPoints());
     }
 
+    @Test
+    public void wizardTakesMoreDamageFromWeapon(){
+        dwarf.setWeapon(dagger);
+        dwarf.getWeapon().attack(wizard);
+        assertEquals(85, wizard.getHealthPoints());
+    }
 }
