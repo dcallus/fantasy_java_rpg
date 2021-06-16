@@ -1,6 +1,9 @@
 package weapons;
 
-public abstract class Weapon {
+import behaviours.IWeapon;
+import player.Player;
+
+public abstract class Weapon implements IWeapon {
 
     private String name;
     private WeaponSize size;
@@ -44,5 +47,9 @@ public abstract class Weapon {
 
     public void setStrength(int strength) {
         this.strength = strength;
+    }
+
+    public void attack(Player player){
+        player.takeDamage(this.attackPower);
     }
 }

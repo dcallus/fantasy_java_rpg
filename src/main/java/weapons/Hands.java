@@ -1,6 +1,7 @@
 package weapons;
 
 import behaviours.IWeapon;
+import player.Player;
 
 public class Hands implements IWeapon {
 
@@ -12,8 +13,9 @@ public class Hands implements IWeapon {
         this.attackPower = 1;
     }
 
-    @Override
-    public void attack() {
 
+    @Override
+    public void attack(Player player) {
+        player.takeDamage(this.attackPower);
     }
 }

@@ -56,6 +56,18 @@ public class PickupWeaponTest {
         suge.setWeapon(battleAxe);
         assertEquals(battleAxe, suge.getWeapon());
     }
-    
+
+    @Test
+    public void testPlayerCanAttack(){
+        suge.setWeapon(battleAxe);
+        suge.getWeapon().attack(dwarf);
+        assertEquals(80, dwarf.getHealthPoints());
+    }
+
+    @Test
+    public void testPlayerCanAttackWithBareHands(){
+        suge.getWeapon().attack(dwarf);
+        assertEquals(99, dwarf.getHealthPoints());
+    }
     
 }

@@ -1,7 +1,9 @@
 package behaviours;
 
+import player.Player;
+
 public interface IWeapon {
 
-    void attack();
+    void attack(Player player);
 
 }
