@@ -11,7 +11,6 @@ public abstract class Mage extends Player {
 
     public Mage(String name) {
         super(name);
-        this.spell = null;
     }
 
     public Spell getSpell() {
