@@ -1,7 +1,5 @@
-import behaviours.IWeapon;
 import org.junit.Before;
 import org.junit.Test;
-import player.Player;
 import player.fighter.Barbarian;
 import player.fighter.Dwarf;
 import player.fighter.Fighter;
@@ -11,7 +9,7 @@ import weapons.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-public class PickupWeaponTest {
+public class WeaponTest {
 
     private Weapon dagger;
     private Weapon spiky;
