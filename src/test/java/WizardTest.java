@@ -62,7 +62,7 @@ public class WizardTest {
     @Test
     public void wizardTakesMoreDamageFromWeapon(){
         dwarf.setWeapon(dagger);
-        dwarf.getWeapon().attack(wizard);
+        dwarf.attack(wizard);
         assertEquals(85, wizard.getHealthPoints());
     }
 }

@@ -37,6 +37,10 @@ public abstract class Player {
         this.healthPoints = healthPoints;
     }
 
+    public void attack(Player player){
+        this.weapon.attack(player);
+    }
+
     public void takeDamage(int damage){
         this.healthPoints -= damage;
     }
