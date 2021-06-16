@@ -11,13 +11,11 @@ public abstract class Fighter extends Player {
 
     public Fighter(String name) {
         super(name);
-        this.carryWeight = carryWeight;
-
     }
 
     public void setWeapon(Weapon weapon) {
         if (weapon.getSize().getValue() <= this.carryWeight) {
-            super.setWeapon((IWeapon) weapon);
+            super.setWeapon(weapon);
         }
     }
 
