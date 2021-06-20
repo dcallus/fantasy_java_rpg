@@ -3,6 +3,7 @@ import org.junit.Test;
 import player.fighter.Dwarf;
 import player.mage.Warlock;
 import player.mage.Wizard;
+import spells.Heal;
 import spells.Spell;
 import spells.SpellType;
 import weapons.Sword;
@@ -18,6 +19,7 @@ public class WizardTest {
     private Warlock warlock;
     private Spell electricSpell;
     private Sword dagger;
+    private Heal healPotion;
 
     @Before
     public void before() {
@@ -27,6 +29,7 @@ public class WizardTest {
         warlock = new Warlock("Jim");
         spell = new Spell("MeteorStrike", 40, SpellType.Fire);
         electricSpell = new Spell("Van Der Graaff Strike", 5, SpellType.Electricity);
+        healPotion = new Heal("Holy Water", 20);
     }
 
     @Test
@@ -64,5 +67,11 @@ public class WizardTest {
         dwarf.setWeapon(dagger);
         dwarf.attack(wizard);
         assertEquals(85, wizard.getHealthPoints());
+    }
+
+    @Test
+    public void wizardHealsDwarf(){
+        wizard.healPlayer(dwarf, healPotion);
+        assertEquals(120, dwarf.getHealthPoints());
     }
 }

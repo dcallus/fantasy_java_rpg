@@ -2,6 +2,7 @@ package player.mage;
 
 
 import player.Player;
+import spells.Heal;
 import spells.Spell;
 import spells.SpellType;
 
@@ -19,6 +20,10 @@ public abstract class Mage extends Player {
 
     public void setSpell(Spell spell) {
         this.spell = spell;
+    }
+
+    public void healPlayer(Player player, Heal heal){
+        player.healPlayer(heal.getHealPower());
     }
 
     public void castSpell(Player player){
