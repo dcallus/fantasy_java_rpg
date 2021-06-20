@@ -74,4 +74,6 @@ public class WizardTest {
         wizard.healPlayer(dwarf, healPotion);
         assertEquals(120, dwarf.getHealthPoints());
     }
+
+
 }

@@ -41,6 +41,18 @@ public abstract class Player {
         this.healthPoints += healAmount;
     }
 
+    public void defendPlayer(SpellType spellType, int defendAmount, Player player) {
+        if (spellType == SpellType.Fire) {
+            setDamageModifier(defendAmount, 1, 1);
+        }
+        else if (spellType == SpellType.Ice) {
+            setDamageModifier(1, defendAmount, 1);
+        }
+        else if (spellType == SpellType.Electricity) {
+            setDamageModifier(1, 1, defendAmount);
+        }
+    }
+
     public void attack(Player player){
         this.weapon.attack(player);
     }
