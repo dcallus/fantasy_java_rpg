@@ -76,8 +76,16 @@ public class WizardTest {
     }
 
     @Test
-    public void wizardDefendsDwarf() {
-        wizard.defendPlayer(SpellType.Fire, 0.5, dwarf);
+    public void wizardNotDefendsDwarf() {
+        warlock.castSpell(dwarf);
+        assertEquals(82, dwarf.getHealthPoints());
+    }
+
+    @Test
+    public void wizardDefendsDwarfFromFire() {
+        wizard.defendAPlayer(SpellType.Fire, 0.5, dwarf);
+        warlock.castSpell(dwarf);
+        assertEquals(95, dwarf.getHealthPoints());
     }
 
 
