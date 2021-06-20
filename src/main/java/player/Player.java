@@ -41,7 +41,7 @@ public abstract class Player {
         this.healthPoints += healAmount;
     }
 
-    public void defendPlayer(SpellType spellType, int defendAmount, Player player) {
+    public void defendPlayer(SpellType spellType, double defendAmount, Player player) {
         if (spellType == SpellType.Fire) {
             setDamageModifier(defendAmount, 1, 1);
         }

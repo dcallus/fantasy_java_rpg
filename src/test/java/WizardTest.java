@@ -75,5 +75,10 @@ public class WizardTest {
         assertEquals(120, dwarf.getHealthPoints());
     }
 
+    @Test
+    public void wizardDefendsDwarf() {
+        wizard.defendPlayer(SpellType.Fire, 0.5, dwarf);
+    }
+
 
 }
