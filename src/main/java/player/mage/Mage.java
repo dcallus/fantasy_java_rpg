@@ -22,9 +22,11 @@ public abstract class Mage extends Player {
         this.spell = spell;
     }
 
-    public void healPlayer(Player player, Heal heal){
+    public void healAPlayer(Player player, Heal heal){
         player.healPlayer(heal.getHealPower());
     }
+
+//    public void defendPlayer
 
     public void castSpell(Player player){
         this.spell.castSpell(player);

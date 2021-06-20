@@ -71,7 +71,7 @@ public class WizardTest {
 
     @Test
     public void wizardHealsDwarf(){
-        wizard.healPlayer(dwarf, healPotion);
+        wizard.healAPlayer(dwarf, healPotion);
         assertEquals(120, dwarf.getHealthPoints());
     }
 
