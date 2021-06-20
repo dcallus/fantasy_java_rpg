@@ -37,6 +37,10 @@ public abstract class Player {
         this.healthPoints = healthPoints;
     }
 
+    public void healPlayer(int healAmount) {
+        this.healthPoints += healAmount;
+    }
+
     public void attack(Player player){
         this.weapon.attack(player);
     }
