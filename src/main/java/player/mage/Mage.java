@@ -26,7 +26,9 @@ public abstract class Mage extends Player {
         player.healPlayer(heal.getHealPower());
     }
 
-//    public void defendPlayer
+    public void defendAPlayer (SpellType spellType, Double amount, Player player) {
+        player.defendPlayer(spellType, amount);
+    }
 
     public void castSpell(Player player){
         this.spell.castSpell(player);
