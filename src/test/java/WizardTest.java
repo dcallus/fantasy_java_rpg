@@ -20,6 +20,7 @@ public class WizardTest {
     private Spell electricSpell;
     private Sword dagger;
     private Heal healPotion;
+    private Spell iceSpell;
 
     @Before
     public void before() {
@@ -29,6 +30,7 @@ public class WizardTest {
         warlock = new Warlock("Jim");
         spell = new Spell("MeteorStrike", 40, SpellType.Fire);
         electricSpell = new Spell("Van Der Graaff Strike", 5, SpellType.Electricity);
+        iceSpell = new Spell("Ice Storm", 20, SpellType.Ice);
         healPotion = new Heal("Holy Water", 20);
     }
 
@@ -85,6 +87,21 @@ public class WizardTest {
     public void wizardDefendsDwarfFromFire() {
         wizard.defendAPlayer(SpellType.Fire, 0.5, dwarf);
         warlock.castSpell(dwarf);
+        assertEquals(95, dwarf.getHealthPoints());
+    }
+
+    @Test
+    public void wizardDefendsDwarfFromIce() {
+        wizard.defendAPlayer(SpellType.Ice, 0.5, dwarf);
+        warlock.setSpell(iceSpell);
+        warlock.castSpell(dwarf);
+        assertEquals(90, dwarf.getHealthPoints());
+    }
+
+    @Test
+    public void wizardDefendsDwarfFromLightning() {
+        wizard.defendAPlayer(SpellType.Electricity, 0.5, dwarf);
+        wizard.castSpell(dwarf);
         assertEquals(95, dwarf.getHealthPoints());
     }
 
