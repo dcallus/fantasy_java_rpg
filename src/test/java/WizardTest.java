@@ -109,7 +109,7 @@ public class WizardTest {
     }
 
     @Test
-    public void wizardCastsShieldSpell() {
+    public void wizardCastsShieldSpellBlocksMagic() {
         //dwarf immune to damage for 5 moves!
         wizard.shieldAPlayer(dwarf, shieldSpell);
         wizard.castSpell(dwarf);
@@ -119,6 +119,19 @@ public class WizardTest {
         wizard.castSpell(dwarf);
         wizard.castSpell(dwarf);
         assertEquals(90, dwarf.getHealthPoints());
+    }
+
+    @Test
+    public void wizardCastsShieldSpellBlocksAttack() {
+        //dwarf immune to damage for 5 moves!
+        wizard.shieldAPlayer(dwarf, shieldSpell);
+        wizard.attack(dwarf);
+        wizard.attack(dwarf);
+        wizard.attack(dwarf);
+        wizard.attack(dwarf);
+        wizard.attack(dwarf);
+        wizard.attack(dwarf);
+        assertEquals(99, dwarf.getHealthPoints());
     }
 
 
