@@ -4,6 +4,7 @@ import player.fighter.Dwarf;
 import player.mage.Warlock;
 import player.mage.Wizard;
 import spells.Heal;
+import spells.ShieldSpell;
 import spells.Spell;
 import spells.SpellType;
 import weapons.Sword;
@@ -21,6 +22,7 @@ public class WizardTest {
     private Sword dagger;
     private Heal healPotion;
     private Spell iceSpell;
+    private ShieldSpell shieldSpell;
 
     @Before
     public void before() {
@@ -32,6 +34,7 @@ public class WizardTest {
         electricSpell = new Spell("Van Der Graaff Strike", 5, SpellType.Electricity);
         iceSpell = new Spell("Ice Storm", 20, SpellType.Ice);
         healPotion = new Heal("Holy Water", 20);
+        shieldSpell = new ShieldSpell("averageShield", 5);
     }
 
     @Test
@@ -103,6 +106,19 @@ public class WizardTest {
         wizard.defendAPlayer(SpellType.Electricity, 0.5, dwarf);
         wizard.castSpell(dwarf);
         assertEquals(95, dwarf.getHealthPoints());
+    }
+
+    @Test
+    public void wizardCastsShieldSpell() {
+        //dwarf immune to damage for 5 moves!
+        wizard.shieldAPlayer(dwarf, shieldSpell);
+        wizard.castSpell(dwarf);
+        wizard.castSpell(dwarf);
+        wizard.castSpell(dwarf);
+        wizard.castSpell(dwarf);
+        wizard.castSpell(dwarf);
+        wizard.castSpell(dwarf);
+        assertEquals(90, dwarf.getHealthPoints());
     }
 
 

@@ -3,6 +3,7 @@ package player.mage;
 
 import player.Player;
 import spells.Heal;
+import spells.ShieldSpell;
 import spells.Spell;
 import spells.SpellType;
 
@@ -26,6 +27,10 @@ public abstract class Mage extends Player {
         player.healPlayer(heal.getHealPower());
     }
 
+    public void shieldAPlayer(Player player, ShieldSpell shieldSpell) {
+        player.setShield(shieldSpell.getNumberOfMoves());
+    }
+
     public void defendAPlayer (SpellType spellType, Double amount, Player player) {
         player.defendPlayer(spellType, amount);
     }
@@ -33,6 +38,8 @@ public abstract class Mage extends Player {
     public void castSpell(Player player){
         this.spell.castSpell(player);
     }
+
+
 
     public abstract Spell createDefaultSpell();
 

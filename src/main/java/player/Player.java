@@ -13,12 +13,26 @@ public abstract class Player {
     private int healthPoints;
     private IWeapon weapon;
     private HashMap<SpellType, Double> damageModifier;
+    private int shield;
 
     public Player(String name){
         this.name = name;
         this.healthPoints = 100;
         this.weapon = new Hands();
         this.damageModifier = new HashMap<>();
+        this.shield = shield;
+    }
+
+    public int getShield() {
+        return shield;
+    }
+
+    public void setShield(int shield) {
+        this.shield = shield;
+    }
+
+    public Boolean hasShield() {
+        return this.shield > 0;
     }
 
     public String getName() {
@@ -58,11 +72,17 @@ public abstract class Player {
     }
 
     public void takeDamage(int damage){
-        this.healthPoints -= damage;
+        if (!hasShield()) {
+            this.healthPoints -= damage;
+        }
+        this.shield -= 1;
     }
 
     public void takeSpellDamage(int damage, SpellType spellType){
-        this.healthPoints -= damage * damageModifier.get(spellType);
+        if (!hasShield()) {
+            this.healthPoints -= damage * damageModifier.get(spellType);
+        }
+        this.shield -= 1;
     }
 
     public IWeapon getWeapon() {
